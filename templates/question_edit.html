@@ -1,0 +1,19 @@
+<h2>Редактирование вопроса</h2>
+	<form action="index.php" method="get">
+		<input type="hidden" name="contr" value="question">
+		<input type="hidden" name="act" value="update">
+		<input type="hidden" name="questionid" value="{{ question.getId() }}">
+		<div class="flexContainer">
+			<div>E-mail автора: </div>
+			<div><input type="text" name="email" value="{{ question.getEmail() }}" required></div>
+		</div>
+		<div class="flexContainer">
+			<div>Вопрос:</div>
+			<div><textarea name="question" required>{{ question.getText() }}</textarea></div>
+		</div>
+		<div class="flexContainer">
+			<div>Ответ:</div>
+			<div><textarea name="answer">{{ question.getAnswer() }}</textarea></div>
+		</div>
+		<input type="submit" name="submit" value="Сохранить"><br>
+	</form>

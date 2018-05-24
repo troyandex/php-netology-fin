@@ -1,0 +1,26 @@
+<h2>Управление темами</h2>
+<table>
+	<tr>
+		<th>Тема</th>
+		<th>Всего вопросов</th>
+		<th>Опубликовано вопросов</th>
+		<th>Без ответа</th>
+		<th colspan="2">Действия</th>
+	</tr>
+	{% for theme in themes %}
+	<tr>
+		<td><a href='index.php?contr=question&act=showallintheme&themeid={{ theme.getId() }}'>{{ theme.getName() }}</td>
+		<td>{{ theme.getNumOfQuestions() }}</td>
+		<td>{{ theme.getNumOfPublished() }}</td>
+		<td>{{ theme.getNumOfUnanswered() }}</td>
+		<td><a href='index.php?contr=theme&act=rename&id={{ theme.getId() }}'>Переименовать</a></td>
+		<td><a href='index.php?contr=theme&act=delete&id={{ theme.getId() }}'>Удалить</a></td>
+	</tr>
+	{% endfor %}
+</table>
+<h2>Добавление темы</h2>
+<form action="index.php" method="GET">
+	<input type="hidden" name="contr" value="theme">
+	<input type="hidden" name="act" value="add">
+	<input type="text" name="name" placeholder="Название темы" required> <input type="submit" name="submit" value="Добавить">
+</form>

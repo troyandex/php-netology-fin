@@ -1,0 +1,43 @@
+<h2>{{ currentTheme.getName }}</h2>
+<table>
+	<tr>
+		<th>Вопрос</th>
+		<th>Ответ</th>
+		<th>Email пользователя</th>
+		<th>Статус</th>
+		<th>Дата создания</th>
+		<th colspan="5">Действия</th>
+	</tr>
+	{% if questions %}
+		{% for question in questions %}
+			<tr>
+				<td>{{ question.getText() }}</td>
+				<td>{{ question.getAnswer() }}</td>
+				<td>{{ question.getEmail() }}</td>
+				<td>
+					{% if question.getBlocked() is null %}
+						{% if question.getAnswer() is null %}
+							<span style="color: orange;">Ожидает ответа</span>
+						{% else %}
+							<span style="color: green;">Опубликован</span>
+						{% endif %}
+					{% else %}
+						<span style="color: red;">Скрыт</span>
+					{% endif %}
+				</td>
+				<td>{{ question.getDate() }}</td>
+				<td><a href='index.php?contr=question&act=answer&questionid={{ question.getId() }}'>Ответить</a></td>
+				<td><a href='index.php?contr=question&act=edit&questionid={{ question.getId() }}'>Редактировать</a></td>
+				<td><a href='index.php?contr=question&act=move&questionid={{ question.getId() }}'>Переместить</a></td>
+				<td>
+					{% if question.getBlocked() is null %}
+						<a href='index.php?contr=question&act=block&questionid={{ question.getId() }}'>Скрыть</a>
+					{% else %}
+						<a href='index.php?contr=question&act=unblock&questionid={{ question.getId() }}'>Разблокировать</a>
+					{% endif %}
+				</td>
+				<td><a href='index.php?contr=question&act=delete&questionid={{ question.getId() }}'>Удалить</a></td>
+			</tr>
+		{% endfor %}
+	{% endif %}
+</table>

@@ -1,0 +1,12 @@
+<h2>Ответить на вопрос</h2>
+<h3><em>{{ question.getEmail() }}</em></h3>
+	<p>Вопрос: <strong>{{ question.getText() }}</strong></p>
+	<p>Ответ:</p>
+	<form action="index.php" method="get">
+		<input type="hidden" name="contr" value="question">
+		<input type="hidden" name="act" value="addanswer">
+		<input type="hidden" name="questionid" value="{{ question.getId() }}">
+		<textarea name="answer" placeholder="Ответ" required>{{ question.getAnswer() }}</textarea><br>
+		<input type="checkbox" name="hide"> Не публиковать на сайте<br>
+		<input type="submit" name="submit" value="Ответить"><br>
+	</form>

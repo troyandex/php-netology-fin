@@ -1,0 +1,11 @@
+<h2>Редактирование темы</h2>
+	<form action="index.php" method="get">
+		<input type="hidden" name="contr" value="theme">
+		<input type="hidden" name="act" value="update">
+		<input type="hidden" name="id" value="{{ theme.getId() }}">
+		<div class="flexContainer">
+			<div>Название: </div>
+			<div><input type="text" name="name" value="{{ theme.getName() }}" required></div>
+		</div>
+		<input type="submit" name="submit" value="Сохранить"><br>
+	</form>

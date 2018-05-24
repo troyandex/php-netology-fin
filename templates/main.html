@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Ответы на вопросы</title>
+</head>
+<body>
+	<header>
+		<h1>Ответы на вопросы</h1>
+		<div class="loginButton"><a href="index.php?contr=admin&act=login">Войти</a></div>
+	</header>
+	<main>
+		<nav>
+			{% for theme in themes %}
+				<div class="menuItem">
+					<a href="index.php?contr=question&act=showpublished&themeid={{ theme.getId() }}">{{ theme.getName() }}</a>
+				</div>
+			{% endfor %}
+		</nav>
+		<section class="content">
+			{% if content %}
+				{% include content %}
+			{% endif %}
+		</section>
+	</main>
+	{% include 'footer.html' %}
+</body>
+</html>

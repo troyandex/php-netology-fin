@@ -1,0 +1,16 @@
+<h2>Управление администраторами</h2>
+<table>
+	<tr>
+		<th>Имя администратора</th>
+		<th>Эл. почта</th>
+		<th colspan="2">Действия</th>
+	</tr>
+	{% for admin in admins %}
+	<tr>
+		<td>{{ admin.getName() }}</td>
+		<td>{{ admin.getEmail() }}</td>
+		<td><a href='index.php?contr=admin&act=resetpass&id={{ admin.getId() }}'>Задать пароль</a></td>
+		<td><a href='index.php?contr=admin&act=delete&id={{ admin.getId() }}'>Удалить</a></td>
+	</tr>
+	{% endfor %}
+</table>

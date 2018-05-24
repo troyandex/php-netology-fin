@@ -1,0 +1,132 @@
+* {
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 12px;
+}
+
+h1 {
+	font-size: 18px;
+	padding: 12px;
+}
+
+h2 {
+	font-size: 16px;
+	padding: 10px 0;
+}
+
+h3 {
+	font-size: 14px;
+	padding: 10px 0;
+}
+
+p {
+	font-size: 12px;
+	padding: 8px;
+}
+
+table {
+	display: block;
+	margin: 12px auto;
+	border-collapse: collapse;
+}
+
+th,td {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	font-size: 12px;
+	padding: 6px;
+}
+
+th {
+	font-weight: bold;
+	text-align: center;
+}
+
+input, textarea, select {
+	margin: 10px auto;
+	padding: 8px;
+	border-radius: 2px;
+	border-style: solid;
+	border-width: 1px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea {
+	min-width: 400px;
+}
+
+a {
+	text-decoration: none;
+	margin: 5px 20px;
+	color: #0000ff;
+	font-size: 12px;
+}
+
+a:hover {
+	outline-style: dotted;
+	outline-width: 1px;
+}
+
+header {
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	display: -webkit-flex; 
+	-webkit-justify-content: flex-start;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header .loginButton {
+	text-align: right;
+	width: 350px;
+}
+
+main {
+	position: relative;
+	top: 50px;
+	width: 100%;
+	height: calc(100vh - 100px);
+	overflow: auto;
+	display: -webkit-flex; 
+	-webkit-justify-content: flex-start;
+	display: flex;
+	justify-content: space-between;
+}
+
+main nav {
+	width: 240px;
+	text-align: left;
+}
+
+.menuItem {
+	display: block;
+	padding: 8px 0;
+}
+
+main .content {
+	width: calc(100% - 200px);
+}
+
+footer {
+	position: fixed;
+	height: 50px;
+	width: 100%;
+	top: calc(100vh - 50px);
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+footer *{
+	padding: 0;
+	margin: 0;
+}
+
+.flexContainer {
+	display: flex;
+	align-items: center;
+}

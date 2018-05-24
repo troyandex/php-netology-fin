@@ -1,0 +1,13 @@
+{
+    "name": "pki/netologia-php",
+    "require": {
+        "twig/twig": "^2.4"
+    },
+    "authors": [
+        {
+            "name": "Konstantin Pronin",
+            "email": "troyandex@gmail.com"
+        }
+    ]
+}
+

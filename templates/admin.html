@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Управление сайтом</title>
+</head>
+<body>
+	<header>
+		<h1>Управление сайтом</h1>
+		<div class="loginButton">Вы вошли как: {{user}} <a href="index.php?contr=admin&act=logout">Выход</a></div>
+	</header>
+	<main>
+		<nav>
+			{% include 'admin_nav.html' %}
+		</nav>
+		<section class="content">
+			{% if content %}
+				{% include content %}
+			{% endif %}
+		</section>
+	</main>
+	{% include 'footer.html' %}
+</body>
+</html>
